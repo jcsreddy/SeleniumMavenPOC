@@ -5,6 +5,7 @@ public class myfirstprogram {
 		// TODO Auto-generated method stub
 		
 		System.out.println("My first java progam....");
+		System.out.println("This is first test....");
 
 	}
 
