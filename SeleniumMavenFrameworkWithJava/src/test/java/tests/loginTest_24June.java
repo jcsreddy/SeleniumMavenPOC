@@ -14,7 +14,7 @@ import pageObjects.loginPageObjects;
 import config.propertiesFile;
 //import excelUtils.excelRead;
 
-public class loginTest {
+public class loginTest_24June {
 	
 	private static WebDriver driver = null;
 	private static String currenturl;
@@ -24,22 +24,12 @@ public class loginTest {
 	
 	public static void main(String[] args) {
 		//getProperties();
-		browserInitiation();
-		readingFromExcel();
 		login();
-		logout();		
+		
 	}
-	
-	public static void browserInitiation()
-	{
-		/* Web driver instantiation */
-		WebDriverManager.chromedriver().setup();
-		driver = new ChromeDriver();
-		driver.manage().window().maximize();
-	}
-	
-	public static void readingFromExcel()
-	{
+
+	public static void login() {
+		
 		/* Reading the data from file */
 		
 		System.out.println("Inside the properties file");
@@ -66,22 +56,34 @@ public class loginTest {
 			e.printStackTrace();
 		}
 		System.out.println("Moving out of the properties file");
-	}
-	
-	public static void login() {
-		driver.get("https://login.salesforce.com/");			
+		System.out.println("The username and password are..."+username+" and "+password);
+		
+		
+		/* Web driver instantiation */
+		
+		WebDriverManager.chromedriver().setup();
+		driver = new ChromeDriver();
+		driver.get("https://login.salesforce.com/");
+		
+		driver.manage().window().maximize();
+		
 		loginPageObjects loginpage = new loginPageObjects(driver);
+		//propertiesFile prop = new propertiesFile(driver);
+		
+		//String projectpath = System.getProperty("user.dir");
+		//excelRead er = new excelRead(projectpath+"/excelUtils/LoginData.xlsx", "sheet1");
+		
+		//loginpage.username("jcsreddy@gmail.com");
+		//loginpage.username(username);
+		//username = propertiesFile.username;
+		//password = propertiesFile.password;
+		System.out.println("The username and password are.."+username+"and"+password);
 		loginpage.username(username);
 		loginpage.password(password);
 		loginpage.clicklogin();
 		driver.manage().timeouts().implicitlyWait(10, TimeUnit.SECONDS);
 		currenturl = driver.getCurrentUrl();
-		System.out.println("The current url is..."+currenturl);		
-	}
-	
-	public static void logout()
-	{
+		System.out.println("The current url is..."+currenturl);
 		driver.close();
-		driver.quit();
 	}
 }
