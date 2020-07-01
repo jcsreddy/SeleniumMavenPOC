@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="1" passed="1">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Default suite" duration-ms="13171" started-at="2020-06-26T09:24:02 IST" finished-at="2020-06-26T09:24:16 IST">
+    <groups>
+    </groups>
+    <test name="Default test" duration-ms="13171" started-at="2020-06-26T09:24:02 IST" finished-at="2020-06-26T09:24:16 IST">
+      <class name="com.salesforce.testcases.LoginTestCase">
+        <test-method status="PASS" signature="setup()[pri:0, instance:com.salesforce.testcases.LoginTestCase@56aac163]" name="setup" is-config="true" duration-ms="8760" started-at="2020-06-26T09:24:02 IST" finished-at="2020-06-26T09:24:11 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- setup -->
+        <test-method status="PASS" signature="loginApplication()[pri:0, instance:com.salesforce.testcases.LoginTestCase@56aac163]" name="loginApplication" duration-ms="3538" started-at="2020-06-26T09:24:11 IST" finished-at="2020-06-26T09:24:15 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- loginApplication -->
+        <test-method status="PASS" signature="tearDown()[pri:0, instance:com.salesforce.testcases.LoginTestCase@56aac163]" name="tearDown" is-config="true" duration-ms="828" started-at="2020-06-26T09:24:15 IST" finished-at="2020-06-26T09:24:16 IST">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- tearDown -->
+      </class> <!-- com.salesforce.testcases.LoginTestCase -->
+    </test> <!-- Default test -->
+  </suite> <!-- Default suite -->
+</testng-results>

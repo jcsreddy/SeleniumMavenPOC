@@ -7,26 +7,19 @@ import java.io.InputStream;
 import java.util.Properties;
 import org.openqa.selenium.WebDriver;
 
-public class propertiesFile {
+public class readLeadData {
 	
-	public static String username;
-	public static String password;
-	
+	public static String lastname;
+	public static String company;
+	public static String leadstatus;
 	WebDriver driver = null;
-	//public static String username = null;
-	//public static String password = null;
 	
 	/* Constructor */
-	public propertiesFile(WebDriver driver)
+	public readLeadData(WebDriver driver)
 	{
 		this.driver = driver;
 	}
 	
-	/*
-	public static void main(String[] args) {
-		getProperties();
-	}
-	*/	
 	public void getProperties(String text)
 	{		
 		try 
@@ -34,18 +27,21 @@ public class propertiesFile {
 			Properties prop = new Properties();
 			String projectpath = System.getProperty("user.dir");
 			System.out.println(projectpath);
-			InputStream input = new FileInputStream(projectpath+"/src/test/java/config/config.properties");
+			InputStream input = new FileInputStream(projectpath+"/src/test/java/config/leaddata.properties");
 			try {
 				prop.load(input);
 			} catch (IOException e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			String username = prop.getProperty("username");
-			System.out.println("The user name is...."+username);
+			String lastname = prop.getProperty("lastname");
+			System.out.println("The last name is...."+lastname);
 			
-			String password = prop.getProperty("password");
-			System.out.println("The user name is...."+password);
+			String company = prop.getProperty("company");
+			System.out.println("The company is...."+company);
+			
+			String leadstatus = prop.getProperty("leadstatus");
+			System.out.println("The lead status is...."+leadstatus);
 			
 		} catch (FileNotFoundException e) 
 		{

@@ -1,4 +1,4 @@
-package tests;
+package com.salesforce.testcases;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -9,9 +9,10 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
-import io.github.bonigarcia.wdm.WebDriverManager;
 
-import pageObjects.loginPageObjects;
+import com.salesforce.pages.LoginPage;
+
+import io.github.bonigarcia.wdm.WebDriverManager;
 import config.propertiesFile;
 
 public class loginTest_backup {
@@ -93,7 +94,7 @@ public class loginTest_backup {
 		
 		driver.manage().window().maximize();
 		
-		loginPageObjects loginpage = new loginPageObjects(driver);
+		LoginPage loginpage = new LoginPage(driver);
 		propertiesFile prop = new propertiesFile(driver);
 		
 		
